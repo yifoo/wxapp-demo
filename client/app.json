@@ -5,6 +5,7 @@
     "pages/topic/topic",
     "pages/ucenter/ucenter",
     "pages/cart/cart",
+    
     "pages/category/category"
   ],
   "window":{

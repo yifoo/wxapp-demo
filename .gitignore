@@ -9,6 +9,6 @@ $RECYCLE.BIN/
 .Spotlight-V100
 .TemporaryItems
 .Trashes
-server/controller/login.js
 # Node.js
 node_modules/
+login.js

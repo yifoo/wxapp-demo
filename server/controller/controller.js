@@ -25,6 +25,6 @@ const mapDir = d => {
 
     return tree
 }
-
+console.log('当前文件',fs.readdirSync(path.join(__dirname)))
 // 默认导出当前文件夹下的映射
 module.exports = mapDir(path.join(__dirname))

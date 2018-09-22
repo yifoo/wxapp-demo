@@ -1,11 +1,9 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/addCgi/addCgi",
     "pages/topic/topic",
     "pages/ucenter/ucenter",
     "pages/cart/cart",
-    
     "pages/category/category"
   ],
   "window":{

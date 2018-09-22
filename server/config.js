@@ -16,22 +16,22 @@ const CONF = {
      * 若使用了腾讯云微信小程序解决方案
      * 开发环境下，MySQL 的初始密码为您的微信小程序 appid
      */
-    mysql: {
-        host: 'localhost',
-        port: 3306,
-        user: 'root',
-        db: 'cAuth',
-        pass: 'wxbccade31a8e59d52',
-        char: 'utf8mb4'
-    },
     // mysql: {
     //     host: 'localhost',
-    //     port: 8889,
+    //     port: 3306,
     //     user: 'root',
     //     db: 'cAuth',
-    //     pass: 'root',
+    //     pass: 'wxbccade31a8e59d52',
     //     char: 'utf8mb4'
     // },
+    mysql: {
+        host: 'localhost',
+        port: 8889,
+        user: 'root',
+        db: 'cAuth',
+        pass: 'root',
+        char: 'utf8mb4'
+    },
 
     cos: {
         /**
@@ -45,18 +45,18 @@ const CONF = {
         uploadFolder: ''
     },
 
-    // // 微信登录态有效期
-    // wxLoginExpires: 7200,
-    // wxMessageToken: 'abcdefgh',
-    // serverHost: 'localhost',
-    // tunnelServerUrl: '',
-    // tunnelSignatureKey: '27fb7d1c161b7ca52d73cce0f1d833f9f5b5ec89',
-    //   // 腾讯云相关配置可以查看云 API 秘钥控制台：https://console.cloud.tencent.com/capi
-    // qcloudAppId: '1256118390',
-    // qcloudSecretId: 'AKIDIUM7h7mVaUL1VxcVcJGdt12veCoJ7lrp',
-    // qcloudSecretKey: '5SfkeEgx1yoiV8Zo15ziQ4ZyEKKApKhx',
-    // wxMessageToken: 'weixinmsgtoken',
-    // networkTimeout: 30000
+    // 微信登录态有效期
+    wxLoginExpires: 7200,
+    wxMessageToken: 'abcdefgh',
+    serverHost: 'localhost',
+    tunnelServerUrl: '',
+    tunnelSignatureKey: '27fb7d1c161b7ca52d73cce0f1d833f9f5b5ec89',
+      // 腾讯云相关配置可以查看云 API 秘钥控制台：https://console.cloud.tencent.com/capi
+    qcloudAppId: '1256118390',
+    qcloudSecretId: 'AKIDIUM7h7mVaUL1VxcVcJGdt12veCoJ7lrp',
+    qcloudSecretKey: '5SfkeEgx1yoiV8Zo15ziQ4ZyEKKApKhx',
+    wxMessageToken: 'weixinmsgtoken',
+    networkTimeout: 30000
 }
 
 module.exports = CONF

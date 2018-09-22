@@ -1,14 +1,14 @@
 //index.js
 var config = require('../../config')
 var util = require('../../utils/util.js')
-
+const app = getApp()
 Page({
   data: {
     userInfo: {},
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    logged: false
   },
-
   // 用户登录示例
   login: function () {
     util.showBusy('正在登录')
@@ -16,15 +16,33 @@ Page({
     // 调用登录接口
     wx.login({
       success: res => {
-        console.log(res)
         wx.request({
           url: config.service.loginUrl,
-          data:res,
+          data:{code:res.code},
           success(result) {
             util.showSuccess('登录成功')
             console.log(result)
             that.setData({
-              userInfo: result.data.data,
+              logged: true,
+              session:result.data.data
+            })
+            // 获取用户信息
+            wx.getSetting({
+              success: res => {
+                console.log("获取用户信息",res)
+                // if (res.authSetting['scope.userInfo']) {
+                  // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+                  wx.getUserInfo({
+                    success: res => {
+                      // 可以将 res 发送给后台解码出 unionId
+                      that.setData({
+                        userInfo: res.userInfo,
+                      })
+                      console.log("用户信息", res.userInfo)
+                    }
+                  })
+                // }
+              }
             })
           },
           fail(error) {

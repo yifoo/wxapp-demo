@@ -23,6 +23,7 @@
     "mysql": "^2.15.0"
   },
   "devDependencies": {
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "request": "^2.88.0"
   }
 }

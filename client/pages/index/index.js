@@ -18,32 +18,31 @@ Page({
       success: res => {
         wx.request({
           url: config.service.loginUrl,
-          data:{code:res.code},
+          data: { code: res.code },
           success(result) {
             util.showSuccess('登录成功')
             console.log(result)
-            that.setData({
-              logged: true,
-              session:result.data.data
-            })
-            // 获取用户信息
-            wx.getSetting({
-              success: res => {
-                console.log("获取用户信息",res)
-                // if (res.authSetting['scope.userInfo']) {
+            if (res.code) {
+              // 获取用户信息
+              wx.getSetting({
+                success: res => {
+                  console.log("获取用户信息", res)
+                  // if (res.authSetting['scope.userInfo']) {
                   // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
                   wx.getUserInfo({
                     success: res => {
                       // 可以将 res 发送给后台解码出 unionId
                       that.setData({
                         userInfo: res.userInfo,
+                        logged: true,
+                        session: result.data.data
                       })
                       console.log("用户信息", res.userInfo)
                     }
                   })
-                // }
-              }
-            })
+                }
+              })
+            }
           },
           fail(error) {
             util.showModel('请求失败', error)

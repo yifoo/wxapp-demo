@@ -11,4 +11,4 @@ $RECYCLE.BIN/
 .Trashes
 # Node.js
 node_modules/
-login.js
+./server/config.js

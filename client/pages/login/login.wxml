@@ -1,0 +1,3 @@
+<view class='login'>
+  <button open-type="getUserInfo" bindgetuserinfo='getUser'>获取权限</button>
+</view>

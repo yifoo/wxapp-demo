@@ -1,33 +1,19 @@
-<!--index.wxml-->
-<view class="container">
-    <!-- 用户登录测试 -->
-    <view class="userinfo">
-        <image
-            class="userinfo-avatar"
-            src="{{logged ? userInfo.avatarUrl : './user-unlogin.png'}}"
-            background-size="cover"
-        ></image>
-        <view>
-            <button class="userinfo-nickname" wx:if="{{!logged}}" open-type="getUserInfo" bindgetuserinfo="login">点击测试登录接口</button>
-            <text class="userinfo-nickname" wx:else>{{userInfo.nickName}}</text>
-        </view>
-    </view>
+ <view class="container">
+  <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for-items="{{banner}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item.image_url}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="channel">
+      <view wx:for="{{channel}}" wx:for-item="item" wx:key="key">
+          <navigator url="item.url" >
+            <text class='title'>{{item.name}}</text>
+            <image style="clear:botn;width: 20px; height: 20px; background-color: #eeeeee;" src="{{item.icon_url}}"></image>
+          </navigator>
+      </view>
+  </view>
+ </view>
 
-
-    <!-- 上传图片测试 -->
-    <view class="uploader">
-        <view class="uploader-text" bindtap="doUpload">
-            <text>上传图片</text>
-        </view>
-        <view class="uploader-container" wx:if="{{imgUrl}}">
-            <image
-                class="uploader-image"
-                src="{{imgUrl}}"
-                mode="aspectFit"
-                bindtap="previewImg"
-            ></image>
-        </view>
-    </view>
-
-
-</view>

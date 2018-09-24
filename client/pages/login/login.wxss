@@ -1,0 +1,7 @@
+/* client/pages/login/login.wxss */
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 750rpx;
+}
